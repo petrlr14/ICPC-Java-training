@@ -1,17 +1,13 @@
 import java.util.Scanner;
 
-class HajjEAkbar {
+class Main {
     public static void main(String[] args) {
         Scanner entrada=new Scanner(System.in);
-        String cases=entrada.nextLine();
         int cont=1;
-        while(!cases.equals("*")){
-            StringBuffer resp=new StringBuffer();
-            resp.append("Case ").append(cont).append(": Hajj-e-");
-            resp.append(cases.equals("Hajj")? "Akbar":"Asghar");
-            System.out.println(resp.toString());
+        String cases;
+        while(!(cases=entrada.nextLine()).equals("*")){
+            System.out.println(String.format("Case %d: Hajj-e-%s", cont, cases.equals("Hajj")?"Akbar":"Asghar"));
             cont++;
-            cases=entrada.nextLine();
         }
     }
 }
